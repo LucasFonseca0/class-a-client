@@ -8,7 +8,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 const schema = z.object({
   email: z.string().email({ message: "Email inválido" }),
   name: z.string().min(1, { message: "Nome é obrigatório" }),
-  phone: z.string().min(10, { message: "Telefone inválido" })
+  phone: z.string().min(10, { message: "Telefone inválido" }),
+  subject: z.string().optional()
 })
 
 type FormData = z.infer<typeof schema>
@@ -61,16 +62,15 @@ export default function ContactForm() {
 
               {/* Conteúdo do CTA */}
               <div className="text-center lg:text-left lg:max-w-xl">
-              <h3 className="h3 text-white mb-2">Quer entrar em contato conosco?</h3>
+                <h3 className="h3 text-white mb-2">Quer entrar em contato conosco?</h3>
                 <p className="text-gray-300 text-lg mb-6">Preencha o formulário abaixo e nossa equipe entrará em contato com você o mais breve possível.</p>
-
 
                 {/* Formulário de CTA */}
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full lg:w-auto">
                   <div className="flex flex-col gap-4 justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
                     <input 
                       type="text" 
-                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500" 
+                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" 
                       placeholder="Seu nome…" 
                       aria-label="Seu nome…" 
                       {...register('name')}
@@ -79,7 +79,7 @@ export default function ContactForm() {
                     
                     <input 
                       type="email" 
-                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500" 
+                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" 
                       placeholder="Seu email…" 
                       aria-label="Seu email…" 
                       {...register('email')}
@@ -88,17 +88,23 @@ export default function ContactForm() {
                     
                     <input 
                       type="text" 
-                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500" 
+                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" 
                       placeholder="Seu telefone…" 
                       aria-label="Seu telefone…" 
                       {...register('phone')}
                     />
                     {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
+
+                    <textarea
+                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500"
+                      placeholder="Assunto (opcional)…"
+                      aria-label="Assunto (opcional)…"
+                      {...register('subject')}
+                    />
                     
-                    <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow">Inscrever-se</button>
+                    <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow">Entrar em contato</button>
                   </div>
-                  {/* Mensagem de sucesso */}
-                  <p className="text-sm text-gray-400 mt-3">Sem spam. Você pode cancelar a inscrição a qualquer momento.</p>
+                  <p className="text-sm text-gray-400 mt-3">Responderemos o mais breve possível. Obrigado por entrar em contato!</p>
                 </form>
               </div>
 
