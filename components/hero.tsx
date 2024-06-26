@@ -1,10 +1,8 @@
-import VideoThumb from '@/public/images/hero-image.png'
-import ModalVideo from '@/components/modal-video'
 import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative">
+    <section className="relative" id='hero'>
 
       {/* Illustration behind hero content */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -z-1" aria-hidden="true">
