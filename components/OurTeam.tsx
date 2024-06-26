@@ -3,7 +3,7 @@ import TeamImage from '@/public/images/testimonial.jpg'  // Usando a mesma image
 
 export default function OurTeam() {
   return (
-    <section className="relative">
+    <section className="relative" id='team'>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
 
@@ -46,8 +46,11 @@ export default function OurTeam() {
 }
 
 const teamMembers = [
-  { name: 'André Silva', role: 'Gestor de Tráfego & Co-Fundador', quote: '“Focado em maximizar o retorno sobre investimento de nossas campanhas de marketing digital.”' },
-  { name: 'Lucas fonseca', role: 'Programador & Co-Fundador', quote: '“Desenvolvo soluções que impulsionam a eficiência e a eficácia de nossos serviços digitais.”' },
-  { name: 'Carla Dias', role: 'Designer Gráfica', quote: '“Minha paixão é criar designs que comuniquem claramente nossa visão e valores.”' },
-  { name: 'Ricardo Gomes', role: 'Designer UI/UX', quote: '“Especializado em criar interfaces intuitivas e experiências envolventes para nossos usuários.”' }
+  { name: 'André Silva', role: 'Gestor de Tráfego & Co-Fundador', quote: '“Focado em maximizar o retorno sobre investimento de suas campanhas de marketing digital.”' },
+  { name: 'Lucas Fonseca', role: 'Programador & Co-Fundador', quote: '“Crio sites eficientes e funcionais que impulsionam a presença online dos nossos clientes.”' },
+  { name: 'Dressa Simões', role: 'Designer Gráfica', quote: '“Minha paixão é criar designs que comuniquem claramente a visão e os valores da sua marca.”' },
+  { name: 'Bruna', role: 'Designer de Artes para Mídia Social', quote: '“Crio artes visuais que capturam a atenção e engajam seu público-alvo nas redes sociais.”' }
 ];
+
+
+
