@@ -46,10 +46,10 @@ export default function OurTeam() {
 }
 
 const teamMembers = [
-  { name: 'André Silva', role: 'Gestor de Tráfego & Co-Fundador', quote: '“Focado em maximizar o retorno sobre investimento de suas campanhas de marketing digital.”' },
+  { name: 'André Luiz', role: 'Gestor de Tráfego & Co-Fundador', quote: '“Focado em maximizar o retorno sobre investimento de suas campanhas de marketing digital.”' },
   { name: 'Lucas Fonseca', role: 'Programador & Co-Fundador', quote: '“Crio sites eficientes e funcionais que impulsionam a presença online dos nossos clientes.”' },
-  { name: 'Dressa Simões', role: 'Designer Gráfica', quote: '“Minha paixão é criar designs que comuniquem claramente a visão e os valores da sua marca.”' },
-  { name: 'Bruna', role: 'Designer de Artes para Mídia Social', quote: '“Crio artes visuais que capturam a atenção e engajam seu público-alvo nas redes sociais.”' }
+  { name: 'Dresa Simões', role: 'Designer Gráfica', quote: '“Minha paixão é criar designs que comuniquem claramente a visão e os valores da sua marca.”' },
+  { name: 'Bruna Helen', role: 'Designer de Artes para Mídia Social', quote: '“Crio artes visuais que capturam a atenção e engajam seu público-alvo nas redes sociais.”' }
 ];
 
 
