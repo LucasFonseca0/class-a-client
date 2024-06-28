@@ -80,11 +80,11 @@ export default function ServicesPage() {
             data-aos-delay={index * 100}
           >
             <div className="lg:ml-8 ">
-              <div className="flex items-center gap-2 bg-primary text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
+              <div className="flex items-center left-1/2 -translate-x-1/2 w-2/3 sm:left-auto sm:translate-x-0 sm:w-auto gap-2 bg-primary text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
             
                   <service.icon className="w-10 h-10 text-white" />
                
-                <h2 className="text-3xl  font-bold leading-snug tracking-tight pr-2 ">
+                <h2 className="text-base sm:text-3xl  font-bold leading-snug tracking-tight pr-2 ">
                   {service.title}
                 </h2>
               </div>
