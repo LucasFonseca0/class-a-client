@@ -75,31 +75,28 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="mb-16 flex flex-col lg:flex-row bg-white p-8 rounded-lg shadow-md"
+            className="mb-16 flex flex-col lg:flex-row bg-neutral-lightGray text-gray-700 p-8 rounded-lg "
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
             <div className="lg:ml-8">
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 p-4 rounded-full bg-gradient-to-r from-orange-500 to-red-400 mb-4 lg:mb-0">
-                  <service.icon className="w-12 h-12 text-white" />
+                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 p-4 rounded-full bg-gradient-to-r from-orange-500 to-red-400 mb-4 lg:mb-0">
+                  <service.icon className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold leading-snug tracking-tight mb-4">
                   {service.title}
                 </h2>
               </div>
-              <p className="text-xl text-gray-600 mb-4">
+              <p className="text-xl  mb-4">
                 {service.description}
               </p>
-              <ul className="list-disc list-inside text-lg text-gray-600 mb-4 space-y-2">
+              <ul className="list-disc list-inside text-lg pl-4  mb-4 space-y-1">
                 {service.details.map((detail, idx) => (
-                  <li key={idx}>{detail}</li>
+                  <li key={idx} className="font-semibold">{detail}</li>
                 ))}
               </ul>
-              <p className="text-lg text-gray-800 font-semibold italic mb-2">
-                Por que fazer esse serviço?
-              </p>
-              <p className="text-lg text-gray-600">{service.reason}</p>
+              <p className="text-lg  mt-10">{service.reason}</p>
             </div>
           </div>
         ))}
