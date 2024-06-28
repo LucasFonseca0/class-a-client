@@ -75,20 +75,20 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="mb-16 flex flex-col lg:flex-row bg-neutral-lightGray text-gray-700 p-8 rounded-lg "
+            className="mb-16 flex flex-col lg:flex-row border-2 border-gray-300 text-gray-700 p-10 rounded-md relative"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <div className="lg:ml-8">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 p-4 rounded-full bg-gradient-to-r from-orange-500 to-red-400 mb-4 lg:mb-0">
+            <div className="lg:ml-8 ">
+              <div className="flex items-center gap-2 bg-primary text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
+            
                   <service.icon className="w-10 h-10 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold leading-snug tracking-tight mb-4">
+               
+                <h2 className="text-3xl  font-bold leading-snug tracking-tight pr-2 ">
                   {service.title}
                 </h2>
               </div>
-              <p className="text-xl  mb-4">
+              <p className="text-xl mt-6 mb-4">
                 {service.description}
               </p>
               <ul className="list-disc list-inside text-lg pl-4  mb-4 space-y-1">
@@ -100,6 +100,9 @@ export default function ServicesPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <button></button>
       </div>
     </section>
   );
