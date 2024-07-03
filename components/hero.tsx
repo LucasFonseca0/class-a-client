@@ -52,12 +52,12 @@ export default function Hero() {
             <path fill="#ffffff" fillOpacity="1" d="M0,128L48,154.7C96,181,192,235,288,234.7C384,235,480,181,576,181.3C672,181,768,235,864,218.7C960,203,1056,117,1152,101.3C1248,85,1344,139,1392,165.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
         </div>
-        <div className=" h-32 ">
-          <Image src="/images/LogoNormal.png" height={1000} width={1000} alt="Logo classA" className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2  lg:w-1/3 rounded-md" />
+        <div className="h-32">
+          <Image src="/images/LogoNormal.png" height={1000} width={1000} alt="Logo classA" className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 lg:w-1/3 rounded-md" />
         </div>
         <div className="wave-bottom rotate-180">
           <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" className="w-full h-32">
-            <path fill="#ffffff" fillOpacity="1" d="M0,224L48,208C96,192,192,160,288,170.7C384,181,480,235,576,256C672,277,768,267,864,234.7C960,203,1056,149,1152,138.7C1248,128,1344,160,1392,186.7L1440,213.3L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            <path fill="#ffffff" fillOpacity="1" d="M0,128L48,154.7C96,181,192,235,288,234.7C384,235,480,181,576,181.3C672,181,768,235,864,218.7C960,203,1056,117,1152,101.3C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
           </svg>
         </div>
       </div>
