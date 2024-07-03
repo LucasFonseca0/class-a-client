@@ -110,7 +110,7 @@ export default function Features() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Gestão de Tráfego" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Elemento" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float top-[30%]" src={FeaturesElement} width={500} height="44" alt="Elemento"  />
                     </div>
                   </Transition>
                   {/* Item 2 */}
@@ -129,7 +129,7 @@ export default function Features() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Criação de Sites" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Elemento" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float top-[30%]" src={FeaturesElement} width={500} height="44" alt="Elemento"  />
                     </div>
                   </Transition>
                   {/* Item 3 */}
@@ -148,7 +148,7 @@ export default function Features() {
                   >
                     <div className="relative inline-flex flex-col">
                       <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Serviços de Design" />
-                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Elemento" style={{ top: '30%' }} />
+                      <Image className="md:max-w-none absolute w-full left-0 transform animate-float top-[30%]" src={FeaturesElement} width={500} height="44" alt="Elemento"  />
                     </div>
                   </Transition>
                 </div>
