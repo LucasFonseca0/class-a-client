@@ -25,6 +25,7 @@ const services = [
       "Desenvolvemos sites modernos e responsivos que refletem a identidade da sua marca. Nossos sites são otimizados para proporcionar a melhor experiência ao usuário.",
     icon: FaLaptop,
     details: [
+      "Landing pages personalizadas",
       "Design responsivo",
       "SEO integrado",
       "Experiência do usuário otimizada",
@@ -80,9 +81,9 @@ export default function ServicesPage() {
             data-aos-delay={index * 100}
           >
             <div className="lg:ml-8 ">
-              <div className="flex items-center left-1/2 -translate-x-1/2 w-2/3 sm:left-auto sm:translate-x-0 sm:w-auto gap-2 bg-primary text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
+              <div className="flex items-center left-1/2 -translate-x-1/2 w-2/3 sm:left-auto sm:translate-x-0 sm:w-auto gap-2 bg-neutral-600 text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
             
-                  <service.icon className="w-10 h-10 text-white" />
+                  <service.icon className="w-10 h-10" />
                
                 <h2 className="text-base sm:text-3xl  font-bold leading-snug tracking-tight pr-2 ">
                   {service.title}
@@ -91,12 +92,12 @@ export default function ServicesPage() {
               <p className="text-xl mt-6 mb-4">
                 {service.description}
               </p>
-              <ul className="list-disc list-inside text-lg pl-4  mb-4 space-y-1">
+              <ul className="list-disc list-inside marker:text-primary text-lg pl-4  mb-4 space-y-1">
                 {service.details.map((detail, idx) => (
                   <li key={idx} className="font-semibold">{detail}</li>
                 ))}
               </ul>
-              <p className="text-lg  mt-10">{service.reason}</p>
+              <p className="text-lg font-medium mt-10">{service.reason}</p>
             </div>
           </div>
         ))}
