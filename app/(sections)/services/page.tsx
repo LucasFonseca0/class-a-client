@@ -82,28 +82,30 @@ export default function ServicesPage() {
           >
             <div className="lg:ml-8 ">
               <div className="flex items-center left-1/2 -translate-x-1/2 w-2/3 sm:left-auto sm:translate-x-0 sm:w-auto gap-2 bg-neutral-600 text-white h-16 absolute top-0 -translate-y-1/2 p-4 rounded-lg rounded-r-2xl">
-            
-                  <service.icon className="w-10 h-10" />
-               
+                <service.icon className="w-10 h-10" />
+
                 <h2 className="text-base sm:text-3xl  font-bold leading-snug tracking-tight pr-2 ">
                   {service.title}
                 </h2>
               </div>
-              <p className="text-xl mt-6 mb-4">
-                {service.description}
-              </p>
+              <p className="text-xl mt-6 mb-4">{service.description}</p>
               <ul className="list-disc list-inside marker:text-primary text-lg pl-4  mb-4 space-y-1">
                 {service.details.map((detail, idx) => (
-                  <li key={idx} className="font-semibold">{detail}</li>
+                  <li key={idx} className="font-semibold">
+                    {detail}
+                  </li>
                 ))}
               </ul>
               <p className="text-lg font-medium mt-10">{service.reason}</p>
             </div>
           </div>
         ))}
+      <div className="flex gap-4 items-center mt-4 mb-10">
+    
+          <h2 className="font-medium">Venha conhecer nossos pacotes de serviço:</h2>
+          <button className="bg-primary text-white btn font-bold hover:opacity-90">Ver nossos pacotes</button>
+      
       </div>
-      <div>
-        <button></button>
       </div>
     </section>
   );
