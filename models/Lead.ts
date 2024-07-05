@@ -16,7 +16,6 @@ const LeadSchema: Schema<ILead> = new Schema({
   email: {
     type: String,
     required: [true, 'Por favor, insira seu email'],
-    unique: true,
     match: [
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
       'Por favor, insira um endereço de email válido',
