@@ -30,7 +30,7 @@ async function dbConnect() {
       console.log('MongoDB conectado com sucesso');
       return mongoose;
     }).catch((error) => {
-      console.error('Erro ao conectar ao MongoDB:', error);
+      console.error('Erro ao conectar ao MongoDB:', error.message, error.stack);
       throw error;
     });
   }
