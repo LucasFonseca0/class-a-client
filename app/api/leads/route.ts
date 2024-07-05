@@ -3,7 +3,13 @@ import Lead from '../../../models/Lead';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
-  await dbConnect();
+  try {
+    await dbConnect();
+  } catch (error) {
+    console.error('Erro de conexão com MongoDB:', error);
+    return NextResponse.json({ success: false, error: 'Erro ao conectar ao banco de dados.' }, { status: 500 });
+  }
+
   try {
     const data = await request.json();
     const lead = await Lead.create(data);
@@ -15,7 +21,13 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  await dbConnect();
+  try {
+    await dbConnect();
+  } catch (error) {
+    console.error('Erro de conexão com MongoDB:', error);
+    return NextResponse.json({ success: false, error: 'Erro ao conectar ao banco de dados.' }, { status: 500 });
+  }
+
   try {
     const leads = await Lead.find({});
     return NextResponse.json({ success: true, data: leads }, { status: 200 });

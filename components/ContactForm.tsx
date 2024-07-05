@@ -17,12 +17,14 @@ type FormData = z.infer<typeof schema>;
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema)
   });
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    setErrorMessage(null);
     try {
       const response = await fetch('/api/leads', {
         method: 'POST',
@@ -37,10 +39,10 @@ export default function ContactForm() {
         reset();
         setTimeout(() => setShowSuccessMessage(false), 5000); // Oculta a mensagem após 5 segundos
       } else {
-        console.error(result.error);
+        setErrorMessage(result.error || 'Erro ao enviar formulário');
       }
     } catch (error) {
-      console.error(error);
+      setErrorMessage('Erro ao enviar formulário');
     }
     setIsSubmitting(false);
   };
@@ -95,6 +97,7 @@ export default function ContactForm() {
                     <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" disabled={isSubmitting}>Entrar em contato</button>
                   </div>
                   {showSuccessMessage && <p className="text-sm text-gray-400 mt-3">Responderemos o mais breve possível. Obrigado por entrar em contato!</p>}
+                  {errorMessage && <p className="text-sm text-red-500 mt-3">{errorMessage}</p>}
                 </form>
               </div>
             </div>

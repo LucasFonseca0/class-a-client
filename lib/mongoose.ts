@@ -27,7 +27,11 @@ async function dbConnect() {
       bufferCommands: false,
       serverSelectionTimeoutMS: 5000,  // Timeout de 5 segundos
     }).then((mongoose) => {
+      console.log('MongoDB conectado com sucesso');
       return mongoose;
+    }).catch((error) => {
+      console.error('Erro ao conectar ao MongoDB:', error);
+      throw error;
     });
   }
   cached.conn = await cached.promise;
