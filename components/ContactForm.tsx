@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useState } from 'react';
 import { z } from 'zod';
@@ -23,27 +23,32 @@ export default function ContactForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    // Simula um pedido de envio de formulário
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Simular atraso de rede
-    console.log(data);
-    // Reseta o formulário com valores padrão para cada campo
-    reset({
-      email: '',
-      name: '',
-      phone: '',
-      subject: ''
-    });
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setShowSuccessMessage(true);
+        reset();
+        setTimeout(() => setShowSuccessMessage(false), 5000); // Oculta a mensagem após 5 segundos
+      } else {
+        console.error(result.error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
     setIsSubmitting(false);
-    setShowSuccessMessage(true);
-    setTimeout(() => setShowSuccessMessage(false), 5000); // Oculta a mensagem após 5 segundos
   };
-  
 
   return (
-    <section id="contact" >
+    <section id="contact">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pb-12 md:pb-20">
-
           <div className="relative bg-gray-900 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden" data-aos="zoom-y-out">
             <div className="absolute right-0 bottom-0 pointer-events-none hidden lg:block" aria-hidden="true">
               <svg width="428" height="328" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +91,7 @@ export default function ContactForm() {
                     <input type="text" className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" placeholder="Seu telefone…" {...register('phone')} />
                     {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
 
-                    <textarea className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" placeholder="Assunto (opcional)…" {...register('subject')} />
+                    <textarea className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 text-white placeholder-gray-500" placeholder="Assunto (opcional)..." {...register('subject')} />
                     <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" disabled={isSubmitting}>Entrar em contato</button>
                   </div>
                   {showSuccessMessage && <p className="text-sm text-gray-400 mt-3">Responderemos o mais breve possível. Obrigado por entrar em contato!</p>}
