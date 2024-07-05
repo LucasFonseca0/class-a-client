@@ -7,8 +7,8 @@ if (!MONGODB_URI) {
 }
 
 interface MongooseCache {
-  conn: mongoose.Connection | null;
-  promise: Promise<mongoose.Connection> | null;
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
 }
 
 let cached: MongooseCache = (global as any).mongoose;
@@ -17,7 +17,7 @@ if (!cached) {
   cached = (global as any).mongoose = { conn: null, promise: null };
 }
 
-async function dbConnect(): Promise<mongoose.Connection> {
+async function dbConnect() {
   if (cached.conn) {
     return cached.conn;
   }
@@ -25,8 +25,9 @@ async function dbConnect(): Promise<mongoose.Connection> {
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 5000,  // Timeout de 5 segundos
     }).then((mongoose) => {
-      return mongoose.connection;
+      return mongoose;
     });
   }
   cached.conn = await cached.promise;
