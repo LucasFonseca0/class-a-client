@@ -1,6 +1,10 @@
-import Logo from './logo'
+import Logo from "./logo";
+import bcrypt from 'bcryptjs';
+
 
 export default function Footer() {
+
+
   return (
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
